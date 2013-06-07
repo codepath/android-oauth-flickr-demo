@@ -11,7 +11,7 @@ import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
 
 @Table(name = "photos")
-public class Photo extends Model { 
+public class FlickrPhoto extends Model { 
 	@Column(name = "uid")
 	private String uid;
 	@Column(name = "name")
@@ -19,11 +19,11 @@ public class Photo extends Model {
 	@Column(name = "url")
 	private String url;
 	
-	public Photo() {
+	public FlickrPhoto() {
 		super();
 	}
 	
-	public Photo(JSONObject object){
+	public FlickrPhoto(JSONObject object){
 		super();
 
 		try {
@@ -37,12 +37,12 @@ public class Photo extends Model {
 		}
 	}
 	
-	public static Photo byPhotoUid(String uid) {
-	   return new Select().from(Photo.class).where("uid = ?", uid).executeSingle();
+	public static FlickrPhoto byPhotoUid(String uid) {
+	   return new Select().from(FlickrPhoto.class).where("uid = ?", uid).executeSingle();
 	}
 	
-	public static ArrayList<Photo> recentItems() {
-      return new Select().from(Photo.class).orderBy("id DESC").limit("300").execute();
+	public static ArrayList<FlickrPhoto> recentItems() {
+      return new Select().from(FlickrPhoto.class).orderBy("id DESC").limit("300").execute();
 	}
 	
 

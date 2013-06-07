@@ -12,13 +12,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.GridView;
 
-import com.codepath.apps.restclienttemplate.models.Photo;
+import com.codepath.apps.restclienttemplate.models.FlickrPhoto;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 public class PhotosActivity extends Activity {
 	
-	RestClient client;
-	ArrayList<Photo> photoItems;
+	FlickrClient client;
+	ArrayList<FlickrPhoto> photoItems;
 	GridView gvPhotos;
 	PhotoArrayAdapter adapter;
 
@@ -26,8 +26,8 @@ public class PhotosActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_photos);
-		client = RestClientApp.getRestClient();
-		photoItems = new ArrayList<Photo>();
+		client = FlickrClientApp.getRestClient();
+		photoItems = new ArrayList<FlickrPhoto>();
 		gvPhotos = (GridView) findViewById(R.id.gvPhotos);
 		adapter = new PhotoArrayAdapter(this, photoItems);
 		gvPhotos.setAdapter(adapter);
@@ -50,8 +50,8 @@ public class PhotosActivity extends Activity {
 					JSONArray photos = json.getJSONObject("photos").getJSONArray("photo");
 					for (int x = 0; x < photos.length(); x++) {
 						String uid  = photos.getJSONObject(x).getString("id");
-						Photo p = Photo.byPhotoUid(uid);
-						if (p == null) { p = new Photo(photos.getJSONObject(x)); };
+						FlickrPhoto p = FlickrPhoto.byPhotoUid(uid);
+						if (p == null) { p = new FlickrPhoto(photos.getJSONObject(x)); };
 						p.save();
 					}
 				} catch (JSONException e) {
@@ -60,7 +60,7 @@ public class PhotosActivity extends Activity {
 				}
                 
 				// Load into GridView from DB
-				for (Photo p : Photo.recentItems()) {
+				for (FlickrPhoto p : FlickrPhoto.recentItems()) {
 					adapter.add(p);
 				}
 				Log.d("DEBUG", "Total: " + photoItems.size());

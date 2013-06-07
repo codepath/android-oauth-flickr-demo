@@ -2,7 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import java.util.List;
 
-import com.codepath.apps.restclienttemplate.models.Photo;
+import com.codepath.apps.restclienttemplate.models.FlickrPhoto;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.content.Context;
@@ -13,14 +13,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class PhotoArrayAdapter extends ArrayAdapter<Photo> {
-	public PhotoArrayAdapter(Context context, List<Photo> photoList) {
+public class PhotoArrayAdapter extends ArrayAdapter<FlickrPhoto> {
+	public PhotoArrayAdapter(Context context, List<FlickrPhoto> photoList) {
 		super(context, R.layout.photo_item, photoList);
 	}
 	
 	@Override
     public View getView(int position, View convertView, ViewGroup parent) {
-		Photo photo = this.getItem(position);
+		FlickrPhoto photo = this.getItem(position);
 		LinearLayout itemView;
 		ImageView ivImage;
 		ImageLoader imageLoader = ImageLoader.getInstance();

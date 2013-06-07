@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.codepath.oauth.OAuthLoginActivity;
 
-public class LoginActivity extends OAuthLoginActivity<RestClient> {
+public class LoginActivity extends OAuthLoginActivity<FlickrClient> {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
