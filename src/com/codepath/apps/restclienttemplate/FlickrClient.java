@@ -18,11 +18,11 @@ public class FlickrClient extends OAuthBaseClient {
     
     public FlickrClient(Context context) {
         super(context, REST_API_CLASS, REST_URL, REST_CONSUMER_KEY, REST_CONSUMER_SECRET, REST_CALLBACK_URL);
-        setBaseUrl("http://api.flickr.com/services/rest");
+        setBaseUrl("https://api.flickr.com/services/rest");
     }
 
     public void getInterestingnessList(AsyncHttpResponseHandler handler) {
-        String apiUrl = getApiUrl("?&format=json&nojsoncallback=1&method=flickr.interestingness.getList");
+        String apiUrl = getApiUrl("?&format=json&nojsoncallback=1&api_key="YOUR API KEY HERE"&method=flickr.interestingness.getList");
         Log.d("DEBUG", "Sending API call to " + apiUrl);
         client.get(apiUrl, null, handler);
     }
