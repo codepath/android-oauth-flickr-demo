@@ -16,8 +16,8 @@ Android App Using [RestClientTemplate](https://github.com/codepath/android-rest-
 3. Fill out a name and description of the app.  Make sure to accept terms of use and click Submit.
 
 4. You should see `Done! Here's the API key and secret for your new app:`.  
-     a. Set the key value to be the `REST_CONSUMER_KEY`.
-     b. Set the secret value to be the `REST_CONSUMER_SECRET`.
+     * Set the key value to be the `REST_CONSUMER_KEY`.
+     * Set the secret value to be the `REST_CONSUMER_SECRET`.
      
 Check the [source files in this repo](https://github.com/codepath/android-oauth-flickr-demo/tree/master/app/src/main/java/com/codepath/apps/restclienttemplate) for a simple example of how to build an authenticated client. 
 
