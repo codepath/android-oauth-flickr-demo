@@ -13,7 +13,7 @@ public class FlickrClient extends OAuthBaseClient {
 
     public static final Class<? extends Api> REST_API_CLASS = FlickrApi.class;
 
-    public static final String REST_URL = "http://www.flickr.com/services";
+    public static final String REST_URL = "https://www.flickr.com/services";
 
     public static final String REST_CONSUMER_KEY = "57ac210e2e82195e071f9a761d763ca0";
 
