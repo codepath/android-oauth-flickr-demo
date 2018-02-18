@@ -28,7 +28,7 @@ public class FlickrClient extends OAuthBaseClient {
     }
 
     public void getInterestingnessList(AsyncHttpResponseHandler handler) {
-        String apiUrl = getApiUrl("?&format=json&nojsoncallback=1&method=flickr.interestingness.getList");
+        String apiUrl = getApiUrl("?format=json&nojsoncallback=1&method=flickr.interestingness.getList");
         Log.d("DEBUG", "Sending API call to " + apiUrl);
         client.get(apiUrl, null, handler);
     }
